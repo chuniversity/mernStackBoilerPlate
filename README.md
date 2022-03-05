@@ -4,10 +4,10 @@
 Easily set up a Frontend React App with Backend Node.JS Express server with example controllers, routes, and models pre-configured. 
 
 Technology used: 
--Node Express
--Mongodb
--Mongoose
--Create React App
+-Node Express  
+-Mongodb  
+-Mongoose  
+-Create React App  
 
 
 ## Directions:
