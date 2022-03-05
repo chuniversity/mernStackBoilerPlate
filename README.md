@@ -27,13 +27,13 @@ create a user and password for this database:
 
 create the file: /server/config.js 
 populate the config.js 
-`
+```
 module.exports = {
   user: 'test',
   pass: 'test',
   dbName: 'test'
 };
-`
+```
 
 Replace the contents with the name of your db credentials
 
