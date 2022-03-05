@@ -1,17 +1,17 @@
-MERN Stack Template
+# MERN Stack Template
 
-Node Express
-Mongodb
-Mongoose
-Create React App
+## Description: 
+Easily set up a Frontend React App with Backend Node.JS Express server with example controllers, routes, and models pre-configured. 
+
+Technology used: 
+-Node Express
+-Mongodb
+-Mongoose
+-Create React App
 
 
-# Set up React App
-cd into client
-run: `npm install`
-run `npm run start`
-
-# Set Up Node Server
+## Directions:
+### Set Up Node Server
 
 open a new terminal
 cd into server
@@ -35,10 +35,14 @@ module.exports = {
 };
 `
 
-Replace the contents with the name of your 
-
+Replace the contents with the name of your db credentials
 
 edit server/mongoConnect.js with the pathing to mongoDB database for your machine
 
 run `npm run start`
+
+### Set up React App
+cd into client
+run: `npm install`
+run: `npm run start`
 

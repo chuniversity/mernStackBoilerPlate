@@ -1,41 +1,19 @@
 const express = require('express');
 const startMongo = require("./mongoConnect");
-
-const Count = require('./models/Count');
-
+// const morgan = require('morgan');  // add morgan (logging) if needed
 
 const app = express();
-const PORT = 4000;
+const Count = require('./models/Count');
+const Name = require('./models/Name');
 
+const router = require('./routes');
+
+const PORT = 4000;
+// app.use(morgan('combined')); // add morgan if needed
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(__dirname + '../client/public'));
-
-
-//test route
-
-app.get('/count', async (req, res) => {
-  const num = req.body.num;
-  const curCount = await Count.find();
-  res.send(curCount.length > 0 ? { count : curCount[0].count } : { count : 0 } )
-});
-
-app.post('/count', async (req, res) => {
-  const num = req.body.num;
-  const curCount = await Count.find();
-  if(curCount.length > 0) {
-    const newCount = await Count.findOneAndUpdate({ count: num - 1}, {count: num});
-    res.send({ count: newCount.count + 1 });
-  } else {
-    const newCount = await Count.create({ count: num });
-    res.send({ count: newCount.count });
-  }
-});
-
-app.post('/name', async (req, res) => {
-  const name = req.body.name
-});
-
+app.use(router);
 
 const startServer = async () => {
   await startMongo()
